@@ -15,7 +15,6 @@ contract Lottery {
     }
     
     function pickWinner() public checkSender returns(address)  {
-       
         uint randomNumber = random();
         uint index = randomNumber % players.length;
     
@@ -34,7 +33,6 @@ contract Lottery {
     
     modifier checkSender() {
         require(msg.sender == manager);
-    
         _;
     }
 }
